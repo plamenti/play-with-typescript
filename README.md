@@ -1,1 +1,15 @@
-# play-with-typescript
+# Play with typescripts
+
+## Visual Studio Code extensions
+1. ESLint
+1. Path Intellisense
+1. Prettier - Code formatter
+
+## Project Setup
+1. `npm init`
+1. Install typescript - `npm install --save-dev typescript`
+1. Create `index.html`
+1. Create `app.ts`
+1. Create script to run TypeScript compiler - `"tsc": "tsc"`
+1. Install lite-server - `npm install --save-dev lite-server`
+1. Create script to start lite-server - `"start-server": "lite-server"`
