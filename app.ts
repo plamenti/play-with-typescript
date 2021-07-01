@@ -1,27 +1,9 @@
-// Union
-function combine(input1: number | string, input2: number | string) {
-    let result;
-    if (typeof input1 === "number" && typeof input2 === "number") {
-        result = input1 + input2;
-    } else {
-        result = input1.toString() + input2.toString();
-    }
-
-    return result;
+function add(n1: number, n2: number): number {
+    return n1 + n2;
 }
 
-const combinedAges = combine(20, 42);
-console.log(combinedAges);
-
-const combinedNames = combine("Max", "Anna");
-console.log(combinedNames);
-
-// Types
-type User = {name: string, age: number};
-function greet(user: User) {
-    console.log("Hi, " + user.name);
-    console.log("Are you realy " + user.age + " years old?")
+function printResult(num: number): void {
+    console.log("Result: " + num);
 }
 
-const user: User = {name: "Plamenti", age: 48};
-greet(user);
+printResult(add(5, 12));
