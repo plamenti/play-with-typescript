@@ -26,4 +26,5 @@ The core primitive types in TypeScript are all lowercase!
 1. Tuples - [number, string]
 1. Enum - enum {NEW, OLD}
 1. Any - * - Any kind of value, no specific type. TRY TO AVOID USING OF ANY!
-1. Union
+1. Union - function combine(input1: number | string, input2: number | string)
+1. Literal - someVar: 'someString' - now the someVar could be only string with value 'someString'
