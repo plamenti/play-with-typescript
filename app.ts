@@ -2,16 +2,20 @@ const person: {
     name: string;
     age: number;
     hobbies: string[];
+    role: [number, string]; // this is tuple
 } = {
     name: "Plamenti",
     age: 50,
-    hobbies: ["Sports", "Programming"]
+    hobbies: ["Sports", "Programming"],
+    role: [48, "dev"]
 };
 
 console.log(person.name);
 for ( const hobby of person.hobbies) {
     console.log(hobby.toUpperCase());
 }
+
+console.log(person.role[0])
 
 const student: {
     id: string;
