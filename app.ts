@@ -15,3 +15,13 @@ console.log(combinedAges);
 
 const combinedNames = combine("Max", "Anna");
 console.log(combinedNames);
+
+// Types
+type User = {name: string, age: number};
+function greet(user: User) {
+    console.log("Hi, " + user.name);
+    console.log("Are you realy " + user.age + " years old?")
+}
+
+const user: User = {name: "Plamenti", age: 48};
+greet(user);
