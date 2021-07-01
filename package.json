@@ -1,0 +1,23 @@
+{
+  "name": "play-with-typescript",
+  "version": "1.0.0",
+  "description": "Play with typescript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/plamenti/play-with-typescript.git"
+  },
+  "keywords": [
+    "typescript",
+    "javascript"
+  ],
+  "author": "plamenti",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/plamenti/play-with-typescript/issues"
+  },
+  "homepage": "https://github.com/plamenti/play-with-typescript#readme"
+}
