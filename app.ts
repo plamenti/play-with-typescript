@@ -1,42 +1,16 @@
-enum Status {ACTIVE, NOT_ACTIVE}
+function combine(input1: number | string, input2: number | string) {
+    let result;
+    if (typeof input1 === "number" && typeof input2 === "number") {
+        result = input1 + input2;
+    } else {
+        result = input1.toString() + input2.toString();
+    }
 
-const person: {
-    name: string;
-    age: number;
-    hobbies: string[];
-    role: [number, string]; // this is tuple
-    status: Status
-} = {
-    name: "Plamenti",
-    age: 50,
-    hobbies: ["Sports", "Programming"],
-    role: [48, "dev"],
-    status: Status.ACTIVE
-};
-
-console.log(person.name);
-for ( const hobby of person.hobbies) {
-    console.log(hobby.toUpperCase());
+    return result;
 }
 
-console.log(person.role[0])
+const combinedAges = combine(20, 42);
+console.log(combinedAges);
 
-const student: {
-    id: string;
-    age: number;
-    name: string;
-    interests: string[];
-    courses: {
-        id: string;
-        courseName: string;
-    }
-} = {
-    id: "abc",
-    age: 23,
-    name: "John",
-    interests: ["ML/AI", "Automation"],
-    courses: {
-        id: "123",
-        courseName: "TypeScript"
-    }
-}
+const combinedNames = combine("Max", "Anna");
+console.log(combinedNames);
