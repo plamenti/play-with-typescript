@@ -7,3 +7,9 @@ function printResult(num: number): void {
 }
 
 printResult(add(5, 12));
+
+// Functions as type
+let combineValues: (a: number, b: number) => number; // same as declarin an Interface of function
+combineValues = add;
+
+console.log(combineValues(5, 4));
