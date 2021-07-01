@@ -1,12 +1,17 @@
 const person: {
     name: string;
     age: number;
+    hobbies: string[];
 } = {
     name: "Plamenti",
-    age: 50
+    age: 50,
+    hobbies: ["Sports", "Programming"]
 };
 
 console.log(person.name);
+for ( const hobby of person.hobbies) {
+    console.log(hobby.toUpperCase());
+}
 
 const student: {
     id: string;

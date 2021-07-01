@@ -20,3 +20,4 @@ The core primitive types in TypeScript are all lowercase!
 1. string - "Hi", 'Hi'
 1. boolean - true, false
 1. object - {age: 30}
+1. Array - [1, 2, 3] - Any JavaScript array, type can be flexible or strict (regarding the element types)
