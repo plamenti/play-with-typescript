@@ -24,3 +24,4 @@ The core primitive types in TypeScript are all lowercase!
 
 ## TypeScript types
 1. Tuples - [number, string]
+1. Enum - enum {NEW, OLD}

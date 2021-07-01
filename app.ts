@@ -1,13 +1,17 @@
+enum Status {ACTIVE, NOT_ACTIVE}
+
 const person: {
     name: string;
     age: number;
     hobbies: string[];
     role: [number, string]; // this is tuple
+    status: Status
 } = {
     name: "Plamenti",
     age: 50,
     hobbies: ["Sports", "Programming"],
-    role: [48, "dev"]
+    role: [48, "dev"],
+    status: Status.ACTIVE
 };
 
 console.log(person.name);
