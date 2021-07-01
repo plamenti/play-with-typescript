@@ -1,16 +1,29 @@
-function add(n1: number, n2: number, showResult: boolean, phrase: string) {
-  const result = n1 + n2;
-  if (showResult) {
-    console.log(phrase + result);
-  } else {
-    return result;
-  }
+const person: {
+    name: string;
+    age: number;
+} = {
+    name: "Plamenti",
+    age: 50
+};
+
+console.log(person.name);
+
+const student: {
+    id: string;
+    age: number;
+    name: string;
+    interests: string[];
+    courses: {
+        id: string;
+        courseName: string;
+    }
+} = {
+    id: "abc",
+    age: 23,
+    name: "John",
+    interests: ["ML/AI", "Automation"],
+    courses: {
+        id: "123",
+        courseName: "TypeScript"
+    }
 }
-
-const number1 = 5;
-const number2 = 2.8;
-const printResult = true;
-const resultPhrase = "Result is: ";
-
-const result = add(number1, number2, printResult, resultPhrase);
-console.log(result);

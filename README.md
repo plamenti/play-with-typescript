@@ -19,3 +19,4 @@ The core primitive types in TypeScript are all lowercase!
 1. number - 1, 5.3, -10
 1. string - "Hi", 'Hi'
 1. boolean - true, false
+1. object - {age: 30}
