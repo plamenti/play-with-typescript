@@ -28,4 +28,8 @@ The core primitive types in TypeScript are all lowercase!
 1. Any - * - Any kind of value, no specific type. TRY TO AVOID USING OF ANY!
 1. Union - function combine(input1: number | string, input2: number | string)
 1. Literal - someVar: 'someString' - now the someVar could be only string with value 'someString'
-1. Type aliases - type Combinable = number | string; 
+1. Type aliases - type Combinable = number | string;
+
+## TypeScript Compiler configuration
+1. --watch mode - `tsc app.ts --watch` - will watch for change `app.ts` and will compile if any
+1. Compiling the entire project - one time run `tsc --init` and this will create `tsconfig.json` file. now combine with --watch mode.

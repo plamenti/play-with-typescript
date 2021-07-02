@@ -1,3 +1,4 @@
+"use strict";
 function add(n1, n2) {
     return n1 + n2;
 }
@@ -18,6 +19,6 @@ addAndHandle(2, 2, function (param) {
     console.log("Callback: " + param);
 });
 var user = {
-    f: function () { console.log("plamen"); }
+    f: function () { console.log("plamenti"); }
 };
 user.f();

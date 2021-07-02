@@ -27,7 +27,7 @@ addAndHandle(2, 2, (param) => {
 const user: {
     f: () => void;
 } = {
-    f: () => {console.log("plamen")}
+    f: () => {console.log("plamenti")}
 }
 
 user.f();
