@@ -1,83 +1,83 @@
-abstract class Department {
-    abstract describe(this: Department): void;
+interface Greetable {
+    name: string;
+
+    greet(phrase: string): void;
 }
 
-class EmployeeDepartment extends Department {
-    private readonly name: string;
-    private employees: string[];
+let user1: Greetable;
 
-    constructor(name: string) {
-        super();
+user1 = {
+    name: "Plamenti",
+    greet(phrase: string): void {
+        console.log(`${phrase} ${this.name}!`);
+    }
+}
+
+user1.greet("Hi");
+
+class Student implements Greetable {
+    name: string;
+    age: number;
+
+    constructor(name: string, age: number) {
         this.name = name;
-        this.employees = [];
+        this.age = age;
     }
 
-    /*
-    Shorthand initialization - this same as the detailed init
-
-    constructor(private readonly name: string) {
-    }
-    */
-
-    describe(this: EmployeeDepartment): void {
-        console.log(`Department: ${this.name}`);
-    }
-
-    addEmployee(employee: string): void {
-        // some validation goes here
-        this.employees.push(employee);
-    }
-
-    addEmployees(...employees: string[]): void {
-        // some validation goes here
-        this.employees = [...employees];
-    }
-
-    printEmployeesInformation(): void {
-        console.log(`Employees count: ${this.employees.length}`);
-        this.employees.forEach(e => {
-            console.log(`Employee: ${e}`);
-        });
+    greet(phrase: string): void {
+        console.log(`${phrase} ${this.name}!`);
     }
 }
 
-const accounting = new EmployeeDepartment("Accounting");
-accounting.describe();
-accounting.addEmployee("Plamenti");
-accounting.addEmployee("Stella");
-accounting.printEmployeesInformation();
+const student1 = new Student("Stallion", 28);
+student1.greet("Hi student");
 
-class ITDepartment extends EmployeeDepartment {
-    constructor(name: string, ...admins: string[]) {
-        super(name);
-        this.addEmployees(...admins);
+let student2: Greetable;
+student2 = new Student("Bunny", 22);
+student2.greet("Hi student");
+
+// extending interface
+interface Breathable {
+    breath(): void;
+}
+
+interface Walkable extends Breathable {
+    walk(): void;
+}
+
+class Walker implements Walkable {
+    breath(): void {
+        console.log("Breathing...")
+    }
+
+    walk(): void {
+        console.log("Walking...")
     }
 }
 
-const itDepartment = new ITDepartment("IT Department", "Linux Admin", "MAC Admin", "Win Admin");
-itDepartment.describe();
-itDepartment.printEmployeesInformation();
+// Interfaces as Function Types
+interface AddFn {
+    (a: number, b: number): number;
+}
 
-class MySingleton {
-    private static instance: MySingleton;
+let add: AddFn;
+add = (n1: number, n2: number) => {
+    return n1 + n2;
+}
 
-    private constructor() {
+console.log(add(4, 5));
 
-    }
+interface Optionable {
+    name?: string;
+}
 
-    static getInstance() {
-        if (this.instance) {
-            return this.instance;
+class ImplementsOpt implements Optionable {
+    // no errors if there is no name propery declared
+    name?: string;
+
+    constructor(name?: string) {
+        if(name) {
+            this.name = name;
         }
-
-        this.instance = new MySingleton();
-        return this.instance;
-    }
-
-    greet(): void {
-        console.log("Greeting from singleton class!")
     }
 }
-
-const mySingletonObj = MySingleton.getInstance();
-mySingletonObj.greet();
