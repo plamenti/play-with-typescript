@@ -14,3 +14,20 @@ function extractKeyValue<T extends object, U extends keyof T>(obj: T, key: U) {
 }
 
 console.log(extractKeyValue({name: "Plamen"}, "name"));
+
+class Printer<T> {
+    value: T;
+
+    constructor(param: T) {
+        this.value = param;
+    }
+
+    print(): void {
+        console.log(this.value);
+    }
+}
+
+const numberPrinter = new Printer(5);
+numberPrinter.print();
+const stringPrinter = new Printer("Plamenti");
+stringPrinter.print();
