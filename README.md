@@ -298,4 +298,57 @@ The ?? operator - “fall back” to a default value when dealing with null or u
 ```javascript
 let x = foo ?? bar();
 ```
+## Generics
+### Generic functions
+1. Set the type placeholder inside angle brackets <>
+The concrete type will be inferenced.
+```javascript
+function merge<T, U>(objA: T, objB: U) {
+    return Object.assign(objA, objB);
+}
 
+const objA = {name: "Bob"};
+const objB = {age: 24};
+
+const objC = merge(objA, objB);
+console.log(objC.name);
+console.log(objC.age);
+```
+2. Constraint the generics - for example generic types should extend `object`. The constraint type could be eny type - custom, union etc.
+```javascript
+function merge<T extends object, U extends object>(objA: T, objB: U) {
+    return Object.assign(objA, objB);
+}
+.
+.
+.
+```
+3. The `keyof` constrain - to ensure that the parameter is a key of an object and this objects constais such key.
+```javascript
+function extractKeyValue<T extends object, U extends keyof T>(obj: T, key: U) {
+    return obj[key];
+}
+
+console.log(extractKeyValue({name: "Plamen"}, "name"));
+```
+### Generic classes
+
+```javascript
+class Printer<T> {
+    value: T;
+
+    constructor(param: T) {
+        this.value = param;
+    }
+
+    print(): void {
+        console.log(this.value);
+    }
+}
+
+const numberPrinter = new Printer(5);
+numberPrinter.print();
+const stringPrinter = new Printer("Plamenti");
+stringPrinter.print();
+```
+Gneric Utility Types - [Documentation](https://www.typescriptlang.org/docs/handbook/utility-types.html)
