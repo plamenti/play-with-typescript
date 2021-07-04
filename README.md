@@ -34,7 +34,7 @@ The core primitive types in TypeScript are all lowercase!
 1. --watch mode - `tsc app.ts --watch` - will watch for change `app.ts` and will compile if any
 1. Compiling the entire project - one time run `tsc --init` and this will create `tsconfig.json` file. now combine with --watch mode.
 
-# Classes and Interfaces
+## Classes and Interfaces
 1. Create class
 ```javascript
 class Department {
@@ -274,5 +274,28 @@ class ImplementsOpt implements Optionable {
         }
     }
 }
+```
+
+## Advanced types
+1. Function overloads
+```javascript
+function add(a: number, b: number): number;
+function add(a: string, b: string): string;
+function add(a: string, b: number): string {
+    if(typeof a === "string" && typeof b === "string") {
+        return a.toString() + b.toString();
+    }
+
+    return a + b;
+}
+```
+2. Optional Chaining - immediately stop running if some expressions is a null or undefined. The ?. operator - when the value? is defined, it will be computed; but when value? is null or undefined, stop w just return undefined.
+```javascript
+let x = foo?.bar(); // bar() will be executed only if foo is not null or undefined
+```
+3. Nullish Coalescing
+The ?? operator - “fall back” to a default value when dealing with null or undefined. Next peace of code means that the value foo will be used when it’s “present”; but when it’s null or undefined, calculate bar() in its place.
+```javascript
+let x = foo ?? bar();
 ```
 
